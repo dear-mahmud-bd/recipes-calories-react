@@ -28,9 +28,9 @@ const Navbar = () => {
 
     return (
         <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-sm">
-            <nav className="flex justify-between items-center px-8 py-4 max-w-screen-lg mx-auto">
+            <nav className="flex justify-between items-center px-8 py-4 max-w-screen-xl mx-auto">
                 <div className="text-2xl font-bold text-gray-800">
-                    Food Calories
+                    Recipes Calories
                 </div>
                 <div className="hidden md:flex space-x-8">
                     <a href="" className="text-lg text-gray-600 hover:text-gray-900">Home</a>

@@ -2,6 +2,7 @@
 import React from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Banner from './components/Banner/Banner';
+import OurRecipes from './components/OurRecipes/OurRecipes';
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
         <Navbar></Navbar>
       </div>
       <Banner className='mt-10'></Banner>
+      <OurRecipes></OurRecipes>
     </>
   );
 };
