@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import RecipeCard from '../RecipeCard/RecipeCard';
-import RecipeDashboard from '../RecipeDashboard/RecipeDashboard';
+import OrderDashboard from '../OrderDashboard/OrderDashboard';
 
 const OurRecipes = () => {
     const [recipes, setRecipes] = useState([]);
@@ -20,17 +20,15 @@ const OurRecipes = () => {
                 </p>
             </div>
 
-
-            <div className='990:flex'>
-                <div className='990:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-2 mr-2'>
+            <div className='990:flex p-2'>
+                <div className='990:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-2 990:mr-2 mb-2'>
                     {recipes.map((recipe, index) => (
                         <RecipeCard key={index} recipe={recipe} />
                     ))}
                 </div>
-                {/* <RecipeCard className='w-2/3'></RecipeCard> */}
+                
                 <div className='990:w-1/3'>
-                    <RecipeDashboard ></RecipeDashboard>
-
+                    <OrderDashboard />
                 </div>
             </div>
         </div>
