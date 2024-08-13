@@ -61,8 +61,8 @@ const OrderDashboard = () => {
                     <tr className="w-full flex justify-between ">
                         <td className="py-2 flex-1"></td>
                         <td className="py-2 flex-1"></td>
-                        <td className="py-2 flex-1"> minutes</td>
-                        <td className="py-2 flex-1"> calories</td>
+                        <td className="py-2 flex-1"> 165 minutes</td>
+                        <td className="py-2 flex-1"> 191 calories</td>
                     </tr>
                 </tbody>
             </table>

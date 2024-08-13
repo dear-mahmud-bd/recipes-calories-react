@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Banner from './components/Banner/Banner';
 import OurRecipes from './components/OurRecipes/OurRecipes';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       </div>
       <Banner className='mt-10'></Banner>
       <OurRecipes></OurRecipes>
+      <Footer></Footer>
     </>
   );
 };

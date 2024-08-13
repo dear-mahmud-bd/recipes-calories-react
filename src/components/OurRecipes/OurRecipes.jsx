@@ -15,7 +15,7 @@ const OurRecipes = () => {
         <div className='max-w-screen-xl mx-auto mb-10'>
             <div className="text-center space-y-4 py-5 mb-10">
                 <h1 className="text-4xl font-bold">Our Recipes</h1>
-                <p className="mx-auto md:mx-[20%]">
+                <p className="mx-[5%] sm:mx-[10%] md:mx-[20%]">
                     Explore a diverse collection of delicious recipes with detailed nutritional information. Find healthy, easy-to-make dishes tailored to your dietary preferences and needs.
                 </p>
             </div>
