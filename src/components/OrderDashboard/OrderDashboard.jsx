@@ -1,23 +1,23 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-const OrderDashboard = ({ orders, ordered }) => {
-    // const { recipe_name, preparing_time, calories } = orders;
-    console.log(ordered);
+const OrderDashboard = ({ wantCook, setWantCook }) => {
+    const [cooking, setCooking] = useState([]);
 
-    const [prepare, setPrepare] = useState([]);
-    
+    const handlePrepating = (id) => {
+        const prepating = wantCook.find(order => order.recipe_id === id);
+        setCooking([...cooking, prepating]);
+        const restItems = wantCook.filter(order => order.recipe_id !== id);
+        setWantCook(restItems);
+    };
 
-    const data = [
-        { id: 1, time: 30, name: "Apple", calories: 52 },
-        { id: 2, time: 45, name: "Banana", calories: 96 },
-        { id: 3, time: 90, name: "Orange", calories: 43 },
-    ];
+    const totalTime = cooking.reduce((accumulator, recipe) => accumulator + recipe.preparing_time, 0);
+    const totalCalories = cooking.reduce((accumulator, recipe) => accumulator + recipe.calories, 0);
 
     return (
         <div className=' border-2 rounded-lg'>
-            <h2 className="text-2xl font-bold text-center border-b pb-5 my-4 w-10/12 mx-auto">Want to cook: {orders.length}</h2>
+            <h2 className="text-2xl font-bold text-center border-b pb-5 my-4 w-10/12 mx-auto">Want to cook: {wantCook.length}</h2>
             <table className="bg-white rounded-lg w-full mb-10">
                 <thead className='text-gray-600'>
                     <tr className="w-full flex justify-between">
@@ -29,14 +29,14 @@ const OrderDashboard = ({ orders, ordered }) => {
                     </tr>
                 </thead>
                 <tbody className="text-sm w-full">
-                    {orders.map((item, idx) => (
+                    {wantCook.map((item, idx) => (
                         <tr key={idx} className="w-full flex justify-between bg-gray-100">
                             <td className="py-2 flex-1 text-center">{idx + 1}</td>
                             <td className="py-2 flex-1">{item.recipe_name}</td>
                             <td className="py-2 flex-1">{item.preparing_time} minutes</td>
                             <td className="py-2 flex-1">{item.calories} calories</td>
                             <td className="py-2 flex-1">
-                                <button className="bg-green-500 text-white px-2 py-1 rounded-full hover:bg-green-600">
+                                <button onClick={() => handlePrepating(item.recipe_id)} className="bg-green-500 text-white px-2 py-1 rounded-full hover:bg-green-600">
                                     Preparing
                                 </button>
                             </td>
@@ -46,7 +46,7 @@ const OrderDashboard = ({ orders, ordered }) => {
             </table>
 
 
-            <h2 className="text-2xl font-bold text-center border-b pb-5 my-4 w-10/12 mx-auto">Currently cooking: 02</h2>
+            <h2 className="text-2xl font-bold text-center border-b pb-5 my-4 w-10/12 mx-auto">Currently cooking: {cooking.length}</h2>
             <table className="bg-white rounded-lg w-full mb-10">
                 <thead className='text-gray-600'>
                     <tr className="w-full flex justify-between">
@@ -57,19 +57,19 @@ const OrderDashboard = ({ orders, ordered }) => {
                     </tr>
                 </thead>
                 <tbody className="text-sm w-full">
-                    {data.map((item, idx) => (
+                    {cooking.map((item, idx) => (
                         <tr key={idx} className="w-full flex justify-between bg-gray-100">
                             <td className="py-2 flex-1 text-center">{idx + 1}</td>
-                            <td className="py-2 flex-1">{item.name}</td>
-                            <td className="py-2 flex-1">{item.time} minutes</td>
+                            <td className="py-2 flex-1">{item.recipe_name}</td>
+                            <td className="py-2 flex-1">{item.preparing_time} minutes</td>
                             <td className="py-2 flex-1">{item.calories} calories</td>
                         </tr>
                     ))}
                     <tr className="w-full flex justify-between ">
-                        <td className="py-2 flex-1"></td>
-                        <td className="py-2 flex-1"></td>
-                        <td className="py-2 flex-1"> 165 minutes</td>
-                        <td className="py-2 flex-1"> 191 calories</td>
+                        <td className="py-2 flex-1"> </td>
+                        <td className="py-2 flex-1"> Total: </td>
+                        <td className="py-2 flex-1"> {totalTime} minutes</td>
+                        <td className="py-2 flex-1"> {totalCalories} calories</td>
                     </tr>
                 </tbody>
             </table>
@@ -78,8 +78,8 @@ const OrderDashboard = ({ orders, ordered }) => {
 };
 
 OrderDashboard.propTypes = {
-    orders: PropTypes.array.isRequired,
-    ordered: PropTypes.array.isRequired,
+    wantCook: PropTypes.array.isRequired,
+    setWantCook: PropTypes.func.isRequired,
 }
 
 export default OrderDashboard;

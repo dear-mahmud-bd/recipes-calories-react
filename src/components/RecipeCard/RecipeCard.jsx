@@ -39,7 +39,7 @@ const RecipeCard = ({ recipe, wantToCook }) => {
                         {calories} calories
                     </span>
                 </div>
-                <button onClick={()=>wantToCook(recipe_id, recipe)} className=" bg-green-500 p-2 px-4 font-semibold rounded-full">
+                <button onClick={()=>wantToCook(recipe_id, recipe)} className=" bg-green-500 hover:bg-green-600 hover:text-gray-200 p-2 px-4 font-semibold rounded-full">
                     Want to Cook
                 </button>
             </div>

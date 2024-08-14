@@ -14,24 +14,34 @@ const OurRecipes = () => {
     }, [])
 
 
-    const [orders, setOrders] = useState([]);
+    const [ordered, setOrdered] = useState([]);
+    const [wantCook, setWantCook] = useState([]);
+
     const wantToCook = (id) => {
-        const exists = orders.find(order => order.recipe_id === id);
+        const exists = ordered.find(order => order.recipe_id === id);
 
         if (!exists) {
-            // If it doesn't exist, find the recipe and add it to orders
             const recipe = recipes.find(r => id === r.recipe_id);
-            if (recipe) {
-                const newOrder = {
-                    recipe_id: recipe.recipe_id,
-                    recipe_name: recipe.recipe_name,
-                    preparing_time: recipe.preparing_time,
-                    calories: recipe.calories
-                };
-                setOrders([...orders, newOrder]);
-            }
+            const newOrder = {
+                recipe_id: recipe.recipe_id,
+                recipe_name: recipe.recipe_name,
+                preparing_time: recipe.preparing_time,
+                calories: recipe.calories
+            };
+            setWantCook([...wantCook, newOrder]);
+            setOrdered([...ordered, newOrder]);
+            toast.success('Item Added', {
+                position: "bottom-center",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         } else {
-            toast.error("This item already added...");
+            toast.error("This item has already been ordered.");
         }
     };
 
@@ -66,7 +76,7 @@ const OurRecipes = () => {
                 </div>
 
                 <div className='990:w-1/3'>
-                    <OrderDashboard orders={orders} ordered={orders}/>
+                    <OrderDashboard wantCook={wantCook} setWantCook={setWantCook} />
                 </div>
             </div>
         </div>
