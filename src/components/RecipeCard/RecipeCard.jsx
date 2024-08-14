@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { IoIosTimer } from 'react-icons/io';
 import { MdOutlineLocalFireDepartment } from 'react-icons/md';
 
-const RecipeCard = ({ recipe }) => {
+const RecipeCard = ({ recipe, wantToCook }) => {
     const { recipe_id,
         recipe_image,
         recipe_name,
@@ -11,7 +12,7 @@ const RecipeCard = ({ recipe }) => {
         ingredients,
         preparing_time,
         calories } = recipe;
-    console.log(ingredients.length);
+    // console.log(ingredients.length);
     return (
         <div>
             <div className="p-4 rounded-lg border bg-white h-full">
@@ -38,12 +39,17 @@ const RecipeCard = ({ recipe }) => {
                         {calories} calories
                     </span>
                 </div>
-                <button className=" bg-green-500 p-2 px-4 font-semibold rounded-full">
+                <button onClick={()=>wantToCook(recipe_id, recipe)} className=" bg-green-500 p-2 px-4 font-semibold rounded-full">
                     Want to Cook
                 </button>
             </div>
         </div>
     );
 };
+
+RecipeCard.propTypes = {
+    recipe: PropTypes.object.isRequired,
+    wantToCook: PropTypes.func.isRequired,
+}
 
 export default RecipeCard;

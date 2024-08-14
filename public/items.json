@@ -53,57 +53,46 @@
         "preparing_time": 60,
         "calories": 300
     },
-
-
-
-
-
-
-
-
-
-    
-
     {
         "recipe_id": "004",
-        "recipe_image": "https://i.ibb.co/MPH1Pxw/r1.png",
-        "recipe_name": "Paneer Butter Masala",
-        "short_description": "Cottage cheese cubes cooked in a rich and creamy tomato gravy.",
+        "recipe_image": "https://i.ibb.co/hD7BGzy/c7.png",
+        "recipe_name": "Chicken Pasta Salad",
+        "short_description": "Buffalo Wing Fried Chicken French Fries Fast Food Chicken Fingers.",
         "ingredients": [
-            "200 g paneer",
-            "1 cup tomato puree",
-            "1/2 cup fresh cream",
-            "2 tbsp butter",
-            "1 tbsp ginger garlic paste",
-            "1 tsp garam masala",
-            "Salt to taste",
-            "Coriander leaves for garnish"
+            "200 g pasta (fusilli or penne)",
+            "150 g grilled chicken breast, sliced",
+            "1/2 cup cherry tomatoes, halved",
+            "1/2 cucumber, diced",
+            "1/4 cup red onion, finely chopped",
+            "1/4 cup bell peppers, diced",
+            "2 tablespoons olive oil",
+            "1/4 cup ranch dressing"
         ],
-        "preparing_time": 35,
-        "calories": 320
+        "preparing_time": 25,
+        "calories": 350
     },
     {
         "recipe_id": "005",
-        "recipe_image": "https://i.ibb.co/YX6P5Cz/c6.png",
-        "recipe_name": "Mutton Rogan Josh",
-        "short_description": "Tender mutton cooked in a flavorful and aromatic curry sauce.",
+        "recipe_image": "https://i.ibb.co/rkVT4f4/cu2.png",
+        "recipe_name": "Vegetable Jalfrezi",
+        "short_description": "A spicy and flavorful mixed vegetable dish cooked in a rich tomato-based sauce.",
         "ingredients": [
-            "500 g mutton",
-            "2 onions chopped",
-            "1 cup yogurt",
-            "2 tbsp rogan josh masala",
-            "3 tbsp ghee",
-            "1 tsp cumin seeds",
-            "1 tsp coriander powder",
-            "Salt to taste"
+            "1 cup bell peppers, sliced",
+            "1/2 cup carrots, julienned",
+            "1/2 cup green beans, chopped",
+            "1/2 cup cauliflower florets",
+            "1/2 cup peas",
+            "1 onion, sliced",
+            "2 tomatoes, chopped",
+            "2 tablespoons vegetable oil"
         ],
-        "preparing_time": 90,
-        "calories": 480
+        "preparing_time": 30,
+        "calories": 220
     },
     {
         "recipe_id": "006",
-        "recipe_image": "https://i.ibb.co/LhMmfGM/r3.png",
-        "recipe_name": "Prawn Masala",
+        "recipe_image": "https://i.ibb.co/L0ZBvw8/cu3.png",
+        "recipe_name": "Prawn Curry Masala",
         "short_description": "Spicy and tangy prawn curry cooked with a blend of Indian spices.",
         "ingredients": [
             "300 g prawns",
